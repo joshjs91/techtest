@@ -2,6 +2,7 @@ import org.javatuples.Pair;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
@@ -48,7 +49,7 @@ public class WordFinder {
             return new ArrayList();
         }
         List<String> words = new ArrayList<>(Arrays.asList(text.split(WORD_REGEX)));
-        words.remove("");
+        words.removeAll(Collections.singletonList(""));
         return words;
     }
 
